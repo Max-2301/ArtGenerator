@@ -6,12 +6,13 @@ let sliderValue;
 
 function setup() {
   createCanvas(width, height);
-  slider = createSlider(10, 100, 20, 1);
+  slider = createSlider(10, 1000, 20, 1);
   slider.position(width / 2, 10);
   generateArt();
 }
 
 function draw() {
+  //mitchel snapte dit niet dus hier check je hoeveel de value van de slider is ;)
   sliderValue = slider.value();
 }
 
@@ -21,7 +22,7 @@ function mouseClicked() {
 
 function generateArt() {
   background(255);
-  let ammountOfShapes = parseInt(Math.random() * sliderValue) + 10;
+  let ammountOfShapes = sliderValue;
   console.log(ammountOfShapes);
   for (let i = 0; i < ammountOfShapes; i++) {
     shapes[parseInt(Math.random() * shapes.length)]();
@@ -73,3 +74,4 @@ function randTriangle() {
   fill(randomColors[0], randomColors[1], randomColors[2]);
   triangle(x, y, x2, y2, x3, y3);
 }
+//ja is allemaal toch wel duidelijk ;)
